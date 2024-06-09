@@ -12,11 +12,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const chatSend = document.getElementById('chat-send');
     const forumPost = document.getElementById('forum-post');
 
-    // Mock storage to simulate file saving
     const chatMessages = [];
     const forumPosts = [];
 
-    // Function to switch between apps
     function switchApp(app) {
         if (app === 'chat') {
             chatSection.classList.add('visible');
@@ -30,12 +28,10 @@ document.addEventListener('DOMContentLoaded', () => {
     chatBtn.addEventListener('click', () => switchApp('chat'));
     forumBtn.addEventListener('click', () => switchApp('forum'));
 
-    // Function to render chat messages
     function renderChat() {
         chatBox.innerHTML = chatMessages.map(msg => `<p>${msg}</p>`).join('');
     }
 
-    // Function to render forum posts
     function renderForum() {
         forumBox.innerHTML = forumPosts.map(post => 
             `<div><h3>${post.title}</h3><p>${post.content}</p></div>`
@@ -62,6 +58,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Initial render
     switchApp('chat');
 });
